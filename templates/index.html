@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            background-image: url('/static/HomePageBG.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+            background-color: rgba(255, 255, 255, 0.7); 
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            border-radius: 25px;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/static/HomePageBG.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(5px); 
+            z-index: -1; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Explore the Origin of the Article</h1>
+        <form action="/map" method="post">
+            <label for="query">Enter your query:</label><br>
+            <input type="text" id="query" name="query"><br>
+            <input type="submit" value="Submit">
+        </form>
+        
+        <!-- New heading and text box -->
+        <h2>Find the origin of the language</h2>
+        <form action="/map2" method="post">
+        <input type="text" id="language-origin" name="language-origin" placeholder="Enter language"><br>
+            <input type="submit" value="Submit Text">
+        </form>
+    </div>
+</body>
+</html>
